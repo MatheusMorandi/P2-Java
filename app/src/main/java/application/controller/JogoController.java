@@ -45,16 +45,15 @@ public class JogoController{
         return "/jogo/insert";
 
     }
-
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
 
-    public String insert(@RequestParam("titulo") String titulo, @RequestParam("ano") int ano) {
+    public String insert(@RequestParam("titulo") String titulo, @RequestParam("anoDeLancamento") int anoDeLancamento) {
 
         Jogo jogo = new Jogo();
 
         jogo.setTitulo(titulo);
 
-        jogo.setAno(ano);
+        jogo.setAnoDeLancamento(anoDeLancamento);
 
         jogoRepo.save(jogo);
 
@@ -80,7 +79,7 @@ public class JogoController{
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
 
-    public String update(@RequestParam("titulo") String titulo, @RequestParam("id") int id, @RequestParam("ano") int ano)
+    public String update(@RequestParam("titulo") String titulo, @RequestParam("id") int id, @RequestParam("anoDeLancamento") int anoDeLancamento)
     {
         Optional<Jogo> jogo = jogoRepo.findById(id);
 
@@ -92,7 +91,7 @@ public class JogoController{
 
         jogo.get().setTitulo(titulo);
 
-        jogo.get().setAno(ano);
+        jogo.get().setAnoDeLancamento(anoDeLancamento);
 
         jogoRepo.save(jogo.get());
 

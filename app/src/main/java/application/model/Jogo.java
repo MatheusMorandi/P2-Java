@@ -24,7 +24,7 @@ public class Jogo {
 
     private String titulo;
 
-    private int ano;
+    private int anoDeLancamento;
 
     public int getId() {
         return id;
@@ -42,12 +42,12 @@ public class Jogo {
         this.titulo = titulo;
     }
 
-    public int getAno() {
-        return ano;
+    public int getAnoDeLancamento() {
+        return anoDeLancamento;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setAnoDeLancamento(int anoDeLancamento) {
+        this.anoDeLancamento = anoDeLancamento;
     }
 
     
